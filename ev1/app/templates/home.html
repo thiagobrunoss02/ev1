@@ -1,0 +1,14 @@
+{% if current_user.is_authenticated %}
+    <div>
+        <h1>{{ current_user.name }}</h1>
+        <p>Em breve o calendário poderá ser visualizado aqui, juntamente com os eventos e o cadastro dos clientes.</p>
+        <a href="{{ url_for('logout') }}">Sair</a>
+    </div>
+
+{% else %}
+    <div>
+        <h1>Este é o aplicativo para controle de eventos da Sérgio Produções</h1>
+        <h2>Faça o Login para visualizar o calendário</h2>
+        <p>Este texto aparece caso você não esteja logado.</p>
+    </div>
+{% endif %}
